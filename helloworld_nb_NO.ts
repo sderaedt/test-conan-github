@@ -6,7 +6,7 @@
     <message>
         <location filename="main.cpp" line="22"/>
         <source>Hello world!</source>
-        <translation type="unfinished">Hallo!</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
