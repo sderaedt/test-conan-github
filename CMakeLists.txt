@@ -108,20 +108,22 @@ install( TARGETS ${PROGRAM_NAME}
     RUNTIME DESTINATION bin COMPONENT Runtime
 )
 
+
+message("QT_PLUGIN_DIR: ${QT_PLUGIN_DIR}")
 #--------------------------------------------------------------------------------
 # Install needed Qt plugins by copying directories from the qt installation
 # One can cull what gets copied by using 'REGEX "..." EXCLUDE'
-install( DIRECTORY "${Qt6_Platform_RES_DIRS}/archdatadir/plugins/imageformats"
+install( DIRECTORY "${QT_PLUGIN_DIR}/imageformats"
     DESTINATION ${plugin_dest_dir}/PlugIns
     COMPONENT Runtime
 )
 
-install( DIRECTORY "${Qt6_Platform_RES_DIRS}/archdatadir/plugins/platforms"
+install( DIRECTORY "${QT_PLUGIN_DIR}/platforms"
     DESTINATION ${plugin_dest_dir}/PlugIns
     COMPONENT Runtime
 )
 
-install( DIRECTORY "${Qt6_Platform_RES_DIRS}/archdatadir/plugins/styles"
+install( DIRECTORY "${QT_PLUGIN_DIR}/styles"
     DESTINATION ${plugin_dest_dir}/PlugIns
     COMPONENT Runtime
 )
