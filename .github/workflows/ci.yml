@@ -46,6 +46,7 @@ jobs:
 
     - name: Test
       run: ctest
-      
+
     - name: CPack
+      working-directory: ${{github.workspace}}/build
       run: cpack
