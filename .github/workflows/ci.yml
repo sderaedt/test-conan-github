@@ -46,3 +46,6 @@ jobs:
 
     - name: Test
       run: ctest
+      
+    - name: CPack
+      run: cpack
