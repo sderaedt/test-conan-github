@@ -8,6 +8,7 @@ on:
 
 env:
     QT_VERSION: 6.2.3
+    BUILD_TYPE: Release
 
 jobs:
   build:
@@ -29,3 +30,10 @@ jobs:
         version: ${{ env.QT_VERSION }}
 
     - uses: actions/checkout@v2
+
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Build
+      # Build your program with the given configuration
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
